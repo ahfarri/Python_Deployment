@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce:wght@500&family=Homemade+Apple&family=Rock+Salt&family=Walter+Turncoat&display=swap');
+        </style>
+    <title>View Recipe</title>
+</head>
+<body>
+    <div class="navbar navbar-light">
+        <h1 class=" logo-font m-3">Recipes, You and Me</h1>
+        <div>
+            <a href="/dashboard"><input class="btn btn-success" type="button" value="Dashboard"></a>
+            <a href="/logout"><input class="btn btn-dark"type="button" value="Logout"></a>
+        </div>
+    </div>
+    <div class="container-sm text-center bg-img4 font text-light p-2">
+        <h1 class="welcome p-3">{{one_recipe.name}}!</h1>
+        <div class="p-4 gold">
+            <p>Description: {{one_recipe.description}}</p>
+            <p>Under 30 minutes: {{one_recipe.minutes}}</p>
+            <p>Instructions: {{one_recipe.instructions}}</p>
+            <p>Date Made: {{formatted}}</p>
+        </div>
+    </div>
+
+</body>
+</html>

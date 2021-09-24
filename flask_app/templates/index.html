@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce:wght@500&family=Homemade+Apple&family=Rock+Salt&family=Walter+Turncoat&display=swap');
+        </style>
+    <title>Login and Registration</title>
+</head>
+<body>
+    <div class="navbar navbar-light">
+        <h1 class=" logo-font m-3">Recipes, You and Me</h1>
+        <div>
+            {% if session['user_name'] %} 
+            <a href="/recipes/new"><input class="btn btn-success" type="button" value="New Recipe?"></a>
+            {% endif %}
+            <a href="/logout"><input class="btn btn-dark"type="button" value="Logout"></a>
+        </div>
+    </div>
+    <div class="bg-img2 no-r font row">
+        <div class="col-5 offset-1 mt-3">
+            <form  class="form-control" action="/create/user" method="post">
+                <h2 class="welcome">Register here!</h2>
+                {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                {% if messages %}                            <!-- check if there are any messages -->
+                    {% for message in messages %}            <!-- loop through the messages -->
+                        <p class="text-danger">{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+                First Name: <input class="form-control" type="text" name="first_name"><br>
+                Last Name: <input class="form-control" type="text" name="last_name"><br>
+                Email: <input class="form-control" type="email" name="email"><br>
+                Password: <input class="form-control" type="password" name="password"><br>
+                Confirm password: <input class="form-control" type="password" name="confirm_password"><br>
+                <input class="form-control btn btn-warning" type="submit" value="Register">
+            </form>
+        </div>
+        <div class="col-5 mt-3">
+            <form class="form-control" action="/login/user" method="post">
+                <h2 class="welcome">Login here!</h2>
+                Email: <input class="form-control" type="email" name="email"><br>
+                Password: <input class="form-control" type="password" name="password"><br>
+                <input class="form-control btn btn-warning" type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+.links {
+    color: green;
+    text-decoration: none;
+    
+}
+
+.logo-font{
+    font-family: 'Homemade Apple', cursive;
+}
+
+.welcome{
+    font-family: 'Rock Salt', cursive;
+    text-decoration: underline;
+    font-size: 1.5em;
+    color: rgb(249, 197, 68);
+}
+
+.font {
+    font-family: 'Walter Turncoat', cursive;
+}
+
+.bg-img {
+    background-image: url(../img/cooking.jpeg);
+    min-height: 500px;
+}
+
+.no-r {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    }
+
+.shadow {
+    color: white;
+}
+
+.bg-img2 {
+    background-image: url(../img/login.jpeg);
+    min-height: 500px;
+}
+
+.bg-img3 {
+    background-image: url(../img/ingredients.jpeg);
+    min-height: 500px;
+}
+
+.bg-img4 {
+    background-image: url(../img/dough.jpeg);
+    min-height: 500px;
+}
+
+.gold {
+    color: goldenrod;
+    font-size: 1.5em;
+}
